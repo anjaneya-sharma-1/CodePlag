@@ -309,30 +309,7 @@ export default function PlagiarismChecker() {
                   onChange={handleFileUpload}
                   className="hidden"
                 />
-                <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                  <div className="w-full h-full max-w-[200px] max-h-[200px]">
-                    <svg viewBox="0 0 100 100" className="w-full h-full">
-                      <path
-                        d="M30,1h40l29,29v40l-29,29h-40l-29-29v-40z"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeWidth="2"
-                      />
-                      <path
-                        d="M31,3h38l28,28v38l-28,28h-38l-28-28v-38z"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeWidth="2"
-                      />
-                      <path
-                        d="M32,5h36l27,27v36l-27,27h-36l-27-27v-36z"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                
 
                 <div className="relative z-10">
                   <div className="mx-auto w-16 h-16 mb-4 rounded-full bg-pink-500/20 flex items-center justify-center">
