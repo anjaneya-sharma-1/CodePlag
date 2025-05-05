@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "CodePlag - C++ Plagiarism Checker",
   description: "Advanced C++ code plagiarism detection using Shingling, MinHashing, and Jaccard Similarity algorithms",
-    generator: 'v0.dev'
+    
 }
 
 export default function RootLayout({
