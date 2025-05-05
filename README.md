@@ -5,7 +5,7 @@
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC)](https://tailwindcss.com/)
 
 CodePlag is an advanced C++ code plagiarism detection system that uses a combination of sophisticated algorithms including Shingling, MinHashing, and Jaccard Similarity to detect similarities between code submissions.
-![image](https://github.com/user-attachments/assets/46cb56f8-4243-434c-8f6a-4f4fb00972a2)
+![image](https://github.com/user-attachments/assets/d54090e7-0920-40dd-bb10-aac49c354c02)
 ![image](https://github.com/user-attachments/assets/23e0de63-9359-4073-bfd2-952217baa7ce)
 
 ## Features
