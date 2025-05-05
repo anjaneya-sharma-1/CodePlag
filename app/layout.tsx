@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "CodeGuard - C++ Plagiarism Checker",
+  title: "CodePlag - C++ Plagiarism Checker",
   description: "Advanced C++ code plagiarism detection using Shingling, MinHashing, and Jaccard Similarity algorithms",
     generator: 'v0.dev'
 }

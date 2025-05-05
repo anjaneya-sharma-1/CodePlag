@@ -12,6 +12,8 @@ type ComparisonResult = {
   file1: string
   file2: string
   similarityScore: number
+  file1Content: string[]
+  file2Content: string[]
   matchedSegments: Array<{
     file1Start: number
     file1End: number
@@ -52,26 +54,7 @@ export default function CodeComparison({ result, threshold }: { result: Comparis
       }
     })
 
-    // Get the content from the matched segments
-    // This is a simplified approach - in a real app, you'd have the full file content
-    const lines: string[] = []
-    let lineNumber = 1
-
-    result.matchedSegments.forEach((segment) => {
-      segment.lines.forEach((line, index) => {
-        const currentLine = isFile1 ? segment.file1Start + index : segment.file2Start + index
-
-        // Add empty lines if there are gaps
-        while (lineNumber < currentLine) {
-          lines.push("// [line content not available]")
-          lineNumber++
-        }
-
-        lines.push(line)
-        lineNumber++
-      })
-    })
-
+    const lines = isFile1 ? result.file1Content : result.file2Content
     const fileId = isFile1 ? "file1" : "file2"
 
     return (
@@ -115,14 +98,7 @@ export default function CodeComparison({ result, threshold }: { result: Comparis
             <pre className="p-4 text-xs">
               <code>
                 {lines.map((line, index) => {
-                  const lineNum = isFile1
-                    ? result.matchedSegments.find((s) => s.lines.includes(line))?.file1Start +
-                        result.matchedSegments.find((s) => s.lines.includes(line))?.lines.indexOf(line) || 0
-                    : result.matchedSegments.find((s) => s.lines.includes(line))?.file2Start +
-                        result.matchedSegments.find((s) => s.lines.includes(line))?.lines.indexOf(line) || 0
-
-                  const isHighlighted = highlightMap.get(lineNum)
-
+                  const isHighlighted = highlightMap.get(index)
                   return (
                     <div
                       key={index}
@@ -130,7 +106,7 @@ export default function CodeComparison({ result, threshold }: { result: Comparis
                         isHighlighted && showMatches ? "bg-red-900/20 border-l-2 border-red-500 pl-2 -ml-2" : ""
                       } transition-colors`}
                     >
-                      <span className="inline-block w-8 text-slate-500 select-none">{lineNum}</span>
+                      <span className="inline-block w-8 text-slate-500 select-none">{index + 1}</span>
                       {line}
                     </div>
                   )

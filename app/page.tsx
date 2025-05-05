@@ -27,7 +27,7 @@ export default function Home() {
             </div>
           </div>
           <h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-            CodeGuard
+            CodePlag
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Advanced C++ code plagiarism detection powered by intelligent algorithms

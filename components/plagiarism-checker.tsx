@@ -38,6 +38,8 @@ type ComparisonResult = {
   file1: string
   file2: string
   similarityScore: number
+  file1Content: string[]
+  file2Content: string[]
   matchedSegments: Array<{
     file1Start: number
     file1End: number
@@ -217,6 +219,8 @@ export default function PlagiarismChecker() {
             file2: file2.name,
             similarityScore: result.similarityScore * 100,
             matchedSegments: result.matchedSegments,
+            file1Content: file1.content.split('\n'),
+            file2Content: file2.content.split('\n')
           })
 
           completedComparisons++
